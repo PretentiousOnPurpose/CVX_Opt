@@ -1,0 +1,23 @@
+clc;
+clear all;
+close all;
+
+rng(102);
+
+%% Generating Data
+A = randn(5, 5);
+
+X = randi([1, 5], 5, 1);
+
+Y = A * X;
+
+%% Optimization Algorithm
+X0 = randi([1, 5], 5, 1);
+
+X_k_1 = X0;
+
+while (1)
+    
+end
+
+%% Results
