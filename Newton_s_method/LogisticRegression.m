@@ -5,7 +5,7 @@ close all;
 rng(100);
 
 %% Data
-M = 1000;
+M = 50;
 
 Np = 2;
 
@@ -25,7 +25,7 @@ Y_hat = Sigmoid(X1 * W);
 numEpochs = 1000;
 
 for iter_e = 1: numEpochs
-    testModel(W, X1, Y);
+    testModel(W, 10000);
 
     delF = zeros(M, Np);
     delF_2 = zeros(Np, Np);
@@ -56,7 +56,13 @@ function sigOut = Sigmoid(sigIn)
     sigOut = 1 ./ (1 + exp(-sigIn));
 end
 
-function testModel(W, X, Y)
+function testModel(W, M1)
+    Y = randi([0, 1], M1, 1);
+    Z = Y .* 10;
+    X = Z + 2 * randn(M1, 1);
+
+    X = [X, ones(M1, 1)];
+    
     Y_hat = Sigmoid(X * W);
     
     Y_hat(Y_hat > 0.5) = 1;
