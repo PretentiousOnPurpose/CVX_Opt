@@ -1,0 +1,26 @@
+clc;
+clear all;
+close all;
+
+%% Data
+M = 1000;
+
+Np = 2;
+
+Y = randi([0, 1], M, 1);
+X = Y .* 10;
+Z = X + 2 * randn(M, 1);
+
+%% Logistic Regression Model
+W = randn(Np, 1);
+X_hat
+
+
+
+
+
+
+
+function sigOut = Sigmoid(sigIn)
+    sigOut = 1 / (1 + exp(-sigIn));
+end
